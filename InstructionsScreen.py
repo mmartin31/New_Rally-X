@@ -36,6 +36,7 @@ class Instructions:
             'CLEAR 10 FLAGS',
             'BEFORE FUEL RUNS OUT.',
             'ARROW KEYS TO MOVE',
+            'SPACE KEY TO DEPLOY SMOKE',
             'PRESS ENTER TO CONTINUE'
         ]
         self.delay = 0.1  # Delay between each character animation
@@ -49,10 +50,12 @@ class Instructions:
         """
         for event in py.event.get():
             if event.type == py.QUIT:
-                py.quit()  # Quit the game if the window is closed
+                py.quit()  # Quit pygame
+                exit()  # Exit the program to prevent further execution
             if event.type == py.KEYDOWN:
                 if event.key == py.K_ESCAPE:
-                    py.quit()  # Quit the game if the Escape key is pressed
+                    py.quit()  # Quit pygame
+                    exit()  # Exit the program
                 if event.key == py.K_RETURN:
                     self.run = False  # Exit the instructions screen if Enter is pressed
 

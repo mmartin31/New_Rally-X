@@ -173,7 +173,7 @@ maze2 = [
     "################################################################",
     "################################################################",
     "################################################################",
-    "####                             XXXXXX XXXXXXXXXXXXXXXXXXXX####",
+    "####                             XXXXXXXXXXXXXXXXXXXXXXXXXXX####",
     "#### X XXX XX XX XX XXXX XXX XX         X                XXX####",
     "#### X XXX XX XX XX XXXX XXX XXXXXXXXXX X XXXXXX XXXXXXX XXX####",
     "####                                    X X            X XXX####",

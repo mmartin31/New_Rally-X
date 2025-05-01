@@ -68,9 +68,11 @@ class ChallengeScreen:
         for event in py.event.get():
             if event.type == py.QUIT:
                 pygame.quit()  # Quit the game
+                exit()
             if event.type == py.KEYDOWN:
                 if event.key == py.K_ESCAPE:
                     pygame.quit()  # Quit the game
+                    exit()
                 if event.key == py.K_RETURN:
                     self.run = False  # Exit the Challenge Screen
 

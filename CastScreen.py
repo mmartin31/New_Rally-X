@@ -73,9 +73,11 @@ class CastScreen:
         for event in py.event.get():
             if event.type == py.QUIT:
                 py.quit()  # Quit the game
+                exit()
             if event.type == py.KEYDOWN:
                 if event.key == py.K_ESCAPE:
                     py.quit()  # Quit the game
+                    exit()
                 if event.key == py.K_RETURN:
                     self.run = False  # Exit the Cast Screen
 

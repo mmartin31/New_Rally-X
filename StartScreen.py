@@ -47,9 +47,11 @@ class MainMenu:
         for event in py.event.get():  # Iterate through all Pygame events
             if event.type == py.QUIT:  # If the user closes the window
                 py.quit()  # Quit Pygame
+                exit()
             if event.type == py.KEYDOWN:  # If a key is pressed
                 if event.key == py.K_ESCAPE:  # If the Escape key is pressed
                     py.quit()  # Quit Pygame
+                    exit()
                 if event.key == py.K_RETURN:  # If the Enter key is pressed
                     self.run = False  # Exit the main menu loop
 

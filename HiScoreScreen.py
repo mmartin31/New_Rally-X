@@ -53,9 +53,11 @@ class HiScoreScreen:
         for event in py.event.get():
             if event.type == py.QUIT:
                 py.quit()  # Quit the game if the window is closed
+                exit()
             if event.type == py.KEYDOWN:
                 if event.key == py.K_ESCAPE:
                     py.quit()  # Quit the game if the Escape key is pressed
+                    exit()
                 if event.key == py.K_RETURN:
                     # Save initials and exit if Enter is pressed
                     if self.isNewScore and len(self.initials) == 3:

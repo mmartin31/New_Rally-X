@@ -95,9 +95,11 @@ class NewRallyX:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+                exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit()
+                    exit()
                 if event.key == pygame.K_1:
                     self.Player.ID = 1
                     self.HUD.number_players = 1
@@ -440,10 +442,11 @@ class NewRallyX:
         self.generate_enemies()  # Regenerate enemies
         self.HUD.fuel_percentage = 1.00  # Restore full fuel
         self.update_radar()  # Update the radar with new positions
-        self.Player.is_crashed = False  # Reset crash flag
-        self.isPause = False  # Resume the game
         self.scoring.get_flags_at_start(len(self.flags))  # Update scoring with remaining flags
         self.scoring.isMultiplier = False  # Reset score multiplier
+        self.Player.is_crashed = False  # Reset crash flag
+        self.isPause = False  # Resume the game
+
 
     def complete_level(self):
         """
@@ -506,6 +509,11 @@ class NewRallyX:
         self.flags = []
         self.place_flags()
         self.determine_flag_type()
+
+        # Reset scoring system
+        self.scoring.get_flags_at_start(len(self.flags))  # Set flags_started
+        self.scoring.flags_remaining = len(self.flags)  # Reset flags_remaining
+        self.scoring.isMultiplier = False  # Reset score multiplier
 
         # Reset game state
         self.isPause = False
